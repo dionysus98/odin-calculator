@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <div class="layout__one" id="layout__one">
+            <div class="documentation" id="documentation">
+                <div class="document__text" id="area__text">
+                    <h2 class="document__title">AREA</h2>
+                    <p class="document__data"></p>
+                </div>
+                <div class="document__text" id="power__text">
+                    <h2 class="document__title">POWER</h2>
+                    <p class="document__data"></p>
+                </div>
+                <div class="document__text" id="speed__text">
+                    <h2 class="document__title">SPEED</h2>
+                    <p class="document__data"></p>
+                </div>
+                <div class="document__text" id="temperature__text">
+                    <h2 class="document__title">TEMPERATURE</h2>
+                    <p class="document__data"></p>
+                </div>
+                <div class="document__text" id="weight-mass__text">
+                    <h2 class="document__title">WEIGHT & MASS</h2>
+                    <p class="document__data"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout__two" id="layout__two">
+            <div class="calculator" id="calculator">
+                <header>
+                    <div class="header__right">
+                        <button type="button" class="burger__menu" id="burger__menu"></button>
+                    </div>
+                    <div class="header__left">
+                        <button type="button" class="header__btn git" id="git"></button>
+                        <button type="button" class="header__btn color__toggle" id="color"></button>
+                    </div>
+                </header>
+                <div class="display" id="display">
+                    <div class="display__mini" id="display__mini"></div>
+                    <div class="display__large" id="display__large"></div>
+                </div>
+                <div class="buttons" id="buttons">
+                    <button type="button" class="btn big__btn" id="clear">Clear</button>
+                    <button type="button" class="btn big__btn" id="backspace">&lt&lt</button>
+                    <button type="button" class="btn big__btn" id="divide">/</button>
+                    <button type="button" class="btn" id="seven">7</button>
+                    <button type="button" class="btn" id="eight">8</button>
+                    <button type="button" class="btn" id="nine">9</button>
+                    <button type="button" class="btn" id="multiply">X</button>
+                    <button type="button" class="btn" id="four">4</button>
+                    <button type="button" class="btn" id="five">5</button>
+                    <button type="button" class="btn" id="six">6</button>
+                    <button type="button" class="btn" id="subtract">-</button>
+                    <button type="button" class="btn" id="one">1</button>
+                    <button type="button" class="btn" id="two">2</button>
+                    <button type="button" class="btn" id="three">3</button>
+                    <button type="button" class="btn" id="add">+</button>
+                    <button type="button" class="btn" id="negate">+/-</button>
+                    <button type="button" class="btn" id="zero">0</button>
+                    <button type="button" class="btn" id="period">.</button>
+                    <button type="button" class="btn" id="equal-to"> = </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout__three" id="layout__three">
+            <div class="color__display" id="color__display">
+                <button type="button" class="color__btn" id="dark">METTALIC</button>
+                <button type="button" class="color__btn" id="light">CLOUDS</button>
+                <button type="button" class="color__btn" id="blue">SKY</button>
+                <button type="button" class="color__btn" id="green">LEAVES</button>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
