@@ -13,9 +13,9 @@ body{
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
-    /* overflow: hidden; */
+    overflow: hidden;
     font-family: 'PT Mono', monospace;
-    background-color: #01B0D3;
+    background-color: #01b0d342;
 }
     
 
@@ -23,38 +23,49 @@ body{
     display: flex;
 }
 
+/* LAYOUT ONE */
+
 .layout__one{
-    display: none;
+ display: none;
+}
+
+.layout__one__active{
+    display: block;
     color: #fff;
     position: absolute;
     width: 30%;
     height: 100vh;
-    /* background-color: #01B0D3; */
 }
+
 .document__title{
     padding: 10px 0;
-    background-color: #000;
+    background-color: #242333;
 }
+
 .document__title:hover{
     background-color: #fff;
     color: #242333;
 }
+
 .document__text{
     text-align: center;
     position: relative;
     margin-bottom: 12em ;
     display: block;
 }
+
 .document__text:hover .document__data{
     display: flex;
     width: 100%;
     background-color: #242333;
 }
+
 .document__data{
     display: none;
     position: absolute;
     left: 0;
 }
+
 .list{
     list-style: none;
     text-align: start;
@@ -64,8 +75,11 @@ body{
 
 
 
+/* LAYOUT TWO */
+
+
 .layout__two{
-    /* background-color: #01B0D3; */
+    background-color: #242333;
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -73,41 +87,90 @@ body{
     height: 100vh;
 }
 
+.calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 p{
     color: #fff;
 }
+
+
 header{
+    font-family: 'Gemunu Libre', sans-serif;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px ;
     background-color: #242333;
+    font-size: 1.75rem;
+}
+
+.title:hover{
+    color: yellow;
+
 }
 
 .header__btn, .burger__menu{
     margin: 10px;
     border: none;
     border-radius: 50%;
-    height: 10px;
-    width: 10px;
+    height: 25px;
+    width: 25px;
 }
 
 .display{
-    height: 250px;
-   
+    border: 2.5px solid #24233380;
+    font-family: 'Share Tech Mono', monospace; ;
+    height: 200px;
+    background-color:azure;
+    font-size: 4rem;
+    text-align: end;
 }
+
 .display__mini{
+    padding: 15px 0;
     height: 40%;
-    background-color:rgba(255, 248, 220, 0.438) ;
+    font-style: italic;
+    font-size: 1.5rem;
 }
+
 .display__large{
     height: 60%;
-    background-color:rgba(255, 248, 220, 0.568);
+    margin: auto 10px;
+
 }
 
 .buttons{
-    margin: 20px 0;
+    background-color: #01b0d3c0;
+    height: 530px;
+}
 
+.burger__menu{
+    background-color: rgba(220, 20, 60, 0.5);
+}
+
+.burger__menu:hover{
+    background-color: crimson
+}
+
+.git{
+    background-color: rgba(255, 127, 80,0.5);
+}
+
+.git:hover{
+    background-color: coral;
+}
+
+.color__toggle{
+    background-color:rgba(128, 255, 0, 0.5);
+}
+
+.color__toggle:hover{
+    background-color: chartreuse;
 }
 
 .btn{
@@ -116,26 +179,88 @@ header{
     border: none;
     border-radius: 6px;
     color: #fff;
-    margin: 10.5px 5px;
+    margin: 20px 5px;
     width: 150px;
     height: 60px;
     font-size: 1.25rem;
-
 }
+
+.btn:hover{
+    background-color: #fff;
+    color: black;
+    font-style: italic;
+}
+
+.btn:active,btn:focus{
+transform: scale(1.2)
+}
+
 .big__btn{
     width: 235px;
 }
-
-footer{
-    background-color: #242333;
-    padding: 17px 0;
-    color: #fff;
+.footer{
+    margin: 50px 0;
 }
+
+.footer a{
+    text-decoration: none;
+    color: #fff; 
+}
+
+.footer a:hover{
+    text-shadow: 1px 1px 0.2px dodgerblue;
+}
+
+
+
+/* LAYOUT THREE */
 
 
 .layout__three{
-    display: none;
-    position: absolute;
-    right: 0;
-    width: 30%;
+     display: none;
 }
+
+.layout__three__active{
+   
+    display: block;
+    color: #fff;
+    position: absolute;
+    width: 30%;
+    height: 100vh;
+    right: 0;
+}
+
+.color__display{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.color__btn{
+    color: black;
+    font-size: 1.15rem;
+    border: none;
+    padding: 11px 25px;
+    width: 30%;
+    border-radius: 100px;
+}
+
+.dark{
+    background-color: slategray;
+}
+
+.light{
+    background-color: gainsboro;
+}
+
+.blue{
+    background-color: deepskyblue;
+}
+
+.green{
+    background-color: forestgreen;
+}
+
