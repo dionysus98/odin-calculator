@@ -11,29 +11,77 @@
 </head>
 
 <body>
-    <main>
+    <main class="main">
+
         <div class="layout__one" id="layout__one">
             <div class="documentation" id="documentation">
                 <div class="document__text" id="area__text">
-                    <h2 class="document__title">AREA</h2>
-                    <p class="document__data"></p>
+                    <div class="document__title">AREA</div>
+                    <div class="document__data">
+                        <ul class="list__title">
+                            <li class="list"> SQUARE </li>
+                            <li class="list"> RECTANGLE</li>
+                            <li class="list"> TRIANGLE</li>
+                            <li class="list"> PARALLELOGRAM</li>
+                            <li class="list"> TRAPEZOID</li>
+                            <li class="list"> CIRCLE</li>
+                        </ul>
+                        <ul class="list__data">
+                            <li class="list">: A = b * h or A = b^2</li>
+                            <li class="list">: A = l * w</li>
+                            <li class="list">: A = 0.5 * b* h</li>
+                            <li class="list">: A = b * h</li>
+                            <li class="list">: A = 0.5 * (b1 + b2)h</li>
+                            <li class="list">: A = π(r^2)</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="document__text" id="power__text">
-                    <h2 class="document__title">POWER</h2>
-                    <p class="document__data"></p>
+                    <div class="document__title">POWER</div>
+                    <div class="document__data">
+                        <ul class="list__title">
+                            <li class="list">1 KILOWATT [kW]</li>
+                            <li class="list">1 HORSEPOWER [hp]</li>
+                            <li class="list">1 CALOIRE [cal/minute]</li>
+                            <li class="list">1 VOLT AMPHERE [V*A]</li>
+                            <li class="list">1 NEWTON [N-meter/second]</li>
+                            <li class="list">1 JOULE [J/second]</li>
+                        </ul>
+                        <ul class="list__data">
+                            <li class="list">: 1000 WATT [W]</li>
+                            <li class="list">: 745.6998715823 WATT [W]</li>
+                            <li class="list">: 0.06978 WATT [W]</li>
+                            <li class="list">: 1 WATT [W]</li>
+                            <li class="list">: 1 WATT [W]</li>
+                            <li class="list">: 1 WATT [W]</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="document__text" id="speed__text">
-                    <h2 class="document__title">SPEED</h2>
-                    <p class="document__data"></p>
+                    <div class="document__title">SPEED</div>
+                    <div class="document__data">
+                        <ul class="list__title">
+                            <li class="list">1 KILOMETER [km/hr]</li>
+                            <li class="list">1 MILE [mi/hr]</li>
+                            <li class="list">1 FOOT [ft/hr]</li>
+                            <li class="list">1 YARD [yd/hr]</li>
+                        </ul>
+                        <ul class="list__data">
+                            <li class="list">: 0.2777777778 [meter/second]</li>
+                            <li class="list">: 0.44704 [meter/second]</li>
+                            <li class="list">: 8.46667E-5 [meter/second]</li>
+                            <li class="list">: 0.000254 meter/second</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="document__text" id="temperature__text">
+                <!-- <div class="document__text" id="temperature__text">
                     <h2 class="document__title">TEMPERATURE</h2>
-                    <p class="document__data"></p>
+                    <div class="document__data"></div>
                 </div>
                 <div class="document__text" id="weight-mass__text">
                     <h2 class="document__title">WEIGHT & MASS</h2>
-                    <p class="document__data"></p>
-                </div>
+                    <div class="document__data"></div>
+                </div> -->
             </div>
         </div>
 
@@ -43,6 +91,7 @@
                     <div class="header__right">
                         <button type="button" class="burger__menu" id="burger__menu"></button>
                     </div>
+                    <p>CALCULATOR</p>
                     <div class="header__left">
                         <button type="button" class="header__btn git" id="git"></button>
                         <button type="button" class="header__btn color__toggle" id="color"></button>
@@ -53,27 +102,29 @@
                     <div class="display__large" id="display__large"></div>
                 </div>
                 <div class="buttons" id="buttons">
-                    <button type="button" class="btn big__btn" id="clear">Clear</button>
-                    <button type="button" class="btn big__btn" id="backspace">&lt&lt</button>
-                    <button type="button" class="btn big__btn" id="divide">/</button>
-                    <button type="button" class="btn" id="seven">7</button>
-                    <button type="button" class="btn" id="eight">8</button>
-                    <button type="button" class="btn" id="nine">9</button>
-                    <button type="button" class="btn" id="multiply">X</button>
-                    <button type="button" class="btn" id="four">4</button>
-                    <button type="button" class="btn" id="five">5</button>
-                    <button type="button" class="btn" id="six">6</button>
-                    <button type="button" class="btn" id="subtract">-</button>
-                    <button type="button" class="btn" id="one">1</button>
-                    <button type="button" class="btn" id="two">2</button>
-                    <button type="button" class="btn" id="three">3</button>
-                    <button type="button" class="btn" id="add">+</button>
-                    <button type="button" class="btn" id="negate">+/-</button>
-                    <button type="button" class="btn" id="zero">0</button>
-                    <button type="button" class="btn" id="period">.</button>
-                    <button type="button" class="btn" id="equal-to"> = </button>
+                    <button style="grid-area: clear;" type="button" class="btn big__btn" id="clear">Clear</button>
+                    <button style="grid-area: backspace;" type="button" class="btn big__btn"
+                        id="backspace">&lt&lt</button>
+                    <button style="grid-area: divide;" type="button" class="btn" id="divide">/</button>
+                    <button style="grid-area: seven;" type="button" class="btn" id="seven">7</button>
+                    <button style="grid-area: eight;" type="button" class="btn" id="eight">8</button>
+                    <button style="grid-area: nine;" type="button" class="btn" id="nine">9</button>
+                    <button style="grid-area: multiply;" type="button" class="btn" id="multiply">X</button>
+                    <button style="grid-area: four;" type="button" class="btn" id="four">4</button>
+                    <button style="grid-area: five;" type="button" class="btn" id="five">5</button>
+                    <button style="grid-area: six;" type="button" class="btn" id="six">6</button>
+                    <button style="grid-area: subtract;" type="button" class="btn" id="subtract">-</button>
+                    <button style="grid-area: one;" type="button" class="btn" id="one">1</button>
+                    <button style="grid-area: two;" type="button" class="btn" id="two">2</button>
+                    <button style="grid-area: three;" type="button" class="btn" id="three">3</button>
+                    <button style="grid-area: add;" type="button" class="btn" id="add">+</button>
+                    <button style="grid-area: negate;" type="button" class="btn" id="negate">+/-</button>
+                    <button style="grid-area: zero;" type="button" class="btn" id="zero">0</button>
+                    <button style="grid-area: period;" type="button" class="btn" id="period">.</button>
+                    <button style="grid-area: equal-to;" type="button" class="btn" id="equal-to"> = </button>
                 </div>
             </div>
+            <footer class="footer">ODIN PROJECT</footer>
         </div>
 
         <div class="layout__three" id="layout__three">
