@@ -39,12 +39,15 @@ body{
 
 .document__title{
     padding: 10px 0;
+    /* background-color: #01b0d3; */
     background-color: #242333;
+    color: #FFF;
 }
 
 .document__title:hover{
     background-color: #fff;
     color: #242333;
+    
 }
 
 .document__text{
@@ -54,16 +57,18 @@ body{
     display: block;
 }
 
-.document__text:hover .document__data{
+ .document__data{
     display: flex;
     width: 100%;
-    background-color: #242333;
-}
-
-.document__data{
-    display: none;
+    color: #242333;
+    /* background-color: #242333; */
     position: absolute;
     left: 0;
+}
+
+.document__data:hover{
+    background-color: #242333;
+    color: #fff;
 }
 
 .list{
@@ -190,10 +195,18 @@ header{
     color: black;
     font-style: italic;
 }
-
+.btn__active{
+    background-color: #fff;
+    color: black;
+    font-style: italic;
+    transition: 0.15s;
+    transform: scale(1.2);
+}
 .btn:active,btn:focus{
+
 transform: scale(1.2)
 }
+
 
 .big__btn{
     width: 235px;
