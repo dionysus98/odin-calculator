@@ -131,9 +131,13 @@ header{
     border: 2.5px solid #24233380;
     font-family: 'Share Tech Mono', monospace; ;
     height: 200px;
-    background-color:azure;
+    
+    background-color: rgba(240, 255, 255, 0.8) ;
     font-size: 4rem;
     text-align: end;
+}
+.display:hover{
+    background-color:azure;
 }
 
 .display__mini{
