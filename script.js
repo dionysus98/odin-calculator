@@ -24,10 +24,14 @@ colorMenu.addEventListener('click', function () {
 })
 
 const result = {
+    add: [],
+    sub: [],
+    multiply: [],
+    divide: [],
     resultMini: [],
-    resultLarge: [],
-    allValue: []
+    allValue: [],
 }
+console.log(result);
 
 
 window.addEventListener('keydown', function (e) {
@@ -40,8 +44,7 @@ window.addEventListener('keydown', function (e) {
     }
 
 })
-result['resultLarge'].push(Number(displayLarge.textContent));
-console.log(result);
+
 
 window.addEventListener('keydown', function (e) {
     const operatorKeys = document.querySelector(`button[operator-key = "${e.keyCode}"]`);
@@ -51,24 +54,28 @@ window.addEventListener('keydown', function (e) {
         if ((displayMini.textContent).length < 50) {
             displayMini.textContent += (Number(displayLarge.textContent) + ' +');
         }
+        result.add.push(displayLarge.textContent);
 
         displayLarge.textContent = '';
     } else if ((operatorKeys.textContent === "-")) {
         if ((displayMini.textContent).length < 50) {
             displayMini.textContent += (Number(displayLarge.textContent) + ' -');
         }
+        result.sub.push(displayLarge.textContent);
         displayLarge.textContent = '';
     } else if ((operatorKeys.textContent === "*")) {
 
         if ((displayMini.textContent).length < 50) {
             displayMini.textContent += (Number(displayLarge.textContent) + ' *');
         }
+        result.multiply.push(displayLarge.textContent);
         displayLarge.textContent = '';
     } else if ((operatorKeys.textContent === "/")) {
 
         if ((displayMini.textContent).length < 50) {
             displayMini.textContent += (Number(displayLarge.textContent) + ' /');
         }
+        result.divide.push(displayLarge.textContent);
         displayLarge.textContent = '';
     }
 
@@ -91,27 +98,16 @@ window.addEventListener('keydown', function (e) {
 
         result['allValue'].push(arr);
 
-        // let math = 0;
-
-        // for (let i = 0; i < arr.length; i++) {
-
-        //     math = math 
-
-        // }
-
 
     }
-    // result['resultMini'].push((displayMini.textContent));
 
 })
-
 
 
 
 window.addEventListener('keydown', function (e) {
     const displayKeys = document.querySelector(`button[display-key = "${e.keyCode}"]`);
     displayKeys.classList.add('btn__active');
-    console.log(displayKeys.textContent);
     if (displayKeys.textContent === "Clear") {
         displayLarge.textContent = '';
         displayMini.textContent = '';
