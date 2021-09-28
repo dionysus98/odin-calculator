@@ -1,3 +1,3 @@
 # odin-calculator
 
-BAISC CALCULATOR - JavaScript - Odin Project
+BASIC CALCULATOR - JavaScript - Odin Project
