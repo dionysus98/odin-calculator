@@ -221,12 +221,14 @@ window.addEventListener('keydown', function displayKeys(e) {
     if (displayKeys.textContent === "Clear") {
         displayLarge.textContent = '';
         displayMini.textContent = '';
-        operatorArr = [];
+        equalTo = '';
+        dotKey = [];
         operator = '';
-        result = [];
+        operatorArr = [];
         firstValue = 0;
         secondValue = 0;
-        dotKey = [];
+        previousOperand = [];
+        result = 0;
     } else if (displayKeys.textContent === "<<") {
         displayLarge.textContent = (displayLarge.textContent).slice(0, -1);
     }
@@ -470,12 +472,14 @@ buttons.forEach(btn => {
         if (displayKeys.textContent === "Clear") {
             displayLarge.textContent = '';
             displayMini.textContent = '';
-            operatorArr = [];
+            equalTo = '';
+            dotKey = [];
             operator = '';
-            result = [];
+            operatorArr = [];
             firstValue = 0;
             secondValue = 0;
-            dotKey = [];
+            previousOperand = [];
+            result = 0;
         } else if (displayKeys.textContent === "<<") {
             displayLarge.textContent = (displayLarge.textContent).slice(0, -1);
         }
@@ -484,7 +488,7 @@ buttons.forEach(btn => {
 })
 
 
-
+//THEME
 
 const mettalic = document.getElementById('dark');
 const clouds = document.getElementById('light');
