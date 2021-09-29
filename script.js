@@ -1,10 +1,9 @@
 'use strict';
 
 // WORK YET to do:
-// 1 Edit - Decimal function (done)
-// 2 Add - Result Round off (done)
 // 3 Add - Click function
 // 4 Add - Themes
+
 
 
 //BURGER MENU
@@ -39,8 +38,6 @@ let result = 0;
 
 
 //DATA-KEYS
-
-
 
 window.addEventListener('keydown', function dataKeys(e) {
 
@@ -281,3 +278,235 @@ function mathFunctions(x, y, operator) {
 function roundNum(num) {
     return Math.round((num + Number.EPSILON) * 100) / 100;
 }
+
+
+
+
+
+//CLICK FUNCTION
+
+
+const buttons = document.querySelectorAll('.btn');
+
+let dataBtn;
+let operatorBtn;
+let displayBtn;
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', function () {
+        dataBtn = btn.getAttribute('data-key');
+
+        //DATAKEYS
+        const dataKeys = document.querySelector(`button[data-key = "${dataBtn}"]`);
+        if (!dataKeys) return;
+        // dataKeys.classList.toggle('btn__active');
+        if (dataBtn === '110') {
+            dotKey.push('.');
+        }
+        if (dotKey.length > 1) return;
+
+        if ((displayLarge.textContent).length < 20) {
+            displayLarge.textContent += dataKeys.textContent;
+        }
+
+        previousOperand.push(displayLarge.textContent);
+        console.log(previousOperand);
+
+    })
+
+})
+
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', function () {
+        operatorBtn = btn.getAttribute('operator-key');
+
+        const operatorKeys = document.querySelector(`button[operator-key = "${operatorBtn}"]`);
+        if (!operatorKeys) return;
+
+        //ADDITION
+
+
+        if (operatorKeys.textContent === '+') {
+
+            displayLarge.style.cssText = 'color : coral';
+            operator = operatorKeys.textContent;
+            operatorArr.push(operatorKeys.textContent);
+            if ((displayMini.textContent).length < 50) {
+                displayMini.textContent += ((displayLarge.textContent) + ` ${operator} `);
+            }
+            displayLarge.textContent = '';
+
+            if (equalTo !== '=') {
+                if (firstValue === 0) firstValue = Number(previousOperand.pop());
+                else secondValue = Number(previousOperand.pop());
+            }
+            if (firstValue !== 0 && secondValue !== 0) {
+                result = mathFunctions(firstValue, secondValue, `${operatorArr[operatorArr.length - 2]}`);
+                displayMini.textContent = `${result} ${operatorKeys.textContent}`;
+                firstValue = result;
+            }
+            dotKey = [];
+
+            //SUBTRACTION
+
+        } else if (operatorKeys.textContent === '-') {
+            displayLarge.style.cssText = 'color : purple';
+            operator = operatorKeys.textContent;
+            operatorArr.push(operatorKeys.textContent);
+            if ((displayMini.textContent).length < 50) {
+                displayMini.textContent += ((displayLarge.textContent) + ` ${operator} `);
+            }
+
+            displayLarge.textContent = '';
+
+            if (equalTo !== '=') {
+                if (firstValue === 0) firstValue = Number(previousOperand.pop());
+                else secondValue = Number(previousOperand.pop());
+            }
+
+
+            if (firstValue !== 0 && secondValue !== 0) {
+                result = mathFunctions(firstValue, secondValue, `${operatorArr[operatorArr.length - 2]}`);
+                displayMini.textContent = `${result} ${operatorKeys.textContent}`;
+                firstValue = result;
+            }
+            dotKey = [];
+
+            //MULTIPLY
+
+        } else if (operatorKeys.textContent === '*') {
+            displayLarge.style.cssText = 'color : darkRed';
+            operator = operatorKeys.textContent;
+            operatorArr.push(operatorKeys.textContent);
+            if ((displayMini.textContent).length < 50) {
+                displayMini.textContent += ((displayLarge.textContent) + ` ${operator} `);
+            }
+            displayLarge.textContent = '';
+
+            if (equalTo !== '=') {
+                if (firstValue === 0) firstValue = Number(previousOperand.pop());
+                else secondValue = Number(previousOperand.pop());
+            }
+            if (firstValue !== 0 && secondValue !== 0) {
+                result = mathFunctions(firstValue, secondValue, `${operatorArr[operatorArr.length - 2]}`);
+
+
+                displayMini.textContent = `${result} ${operatorKeys.textContent}`;
+                firstValue = result;
+            }
+            dotKey = [];
+
+            //DIVIDE
+
+        } else if (operatorKeys.textContent === '/') {
+            displayLarge.style.cssText = 'color : darkGreen';
+            operator = operatorKeys.textContent;
+            operatorArr.push(operatorKeys.textContent);
+            if ((displayMini.textContent).length < 50) {
+                displayMini.textContent += ((displayLarge.textContent) + ` ${operator} `);
+            }
+            displayLarge.textContent = '';
+            if (equalTo !== '=') {
+                if (firstValue === 0) firstValue = Number(previousOperand.pop());
+                else secondValue = Number(previousOperand.pop());
+            }
+
+            if (firstValue !== 0 && secondValue !== 0) {
+                result = mathFunctions(firstValue, secondValue, `${operatorArr[operatorArr.length - 2]}`);
+
+
+                displayMini.textContent = `${result} ${operatorKeys.textContent}`;
+                firstValue = result;
+
+            }
+            dotKey = [];
+
+            //EQUAL TO
+
+        } else if (operatorKeys.textContent === "=") {
+
+            displayLarge.style.cssText = 'color : darkBlue';
+
+            equalTo = operatorKeys.textContent;
+            if ((displayMini.textContent).length < 50) {
+                displayMini.textContent += ((displayLarge.textContent) + ` ${operatorKeys.textContent} `);
+            }
+            displayLarge.textContent = '';
+            displayMini.textContent = '';
+            console.log(operator)
+            if (firstValue === 0) firstValue = Number(previousOperand.pop());
+            else secondValue = Number(previousOperand.pop());
+
+
+
+            if (firstValue !== 0 && secondValue !== 0) {
+                result = mathFunctions(firstValue, secondValue, `${operator}`);
+
+                displayMini.textContent = `${firstValue} ${operator} ${secondValue} ${operatorKeys.textContent}`;
+                displayLarge.textContent = `${result}`;
+
+            } else if (secondValue === 0 && operator === '+') displayLarge.textContent = firstValue;
+            else if (secondValue === 0 && operator === '-') displayLarge.textContent = -firstValue;
+            else if (secondValue === 0 && operator === '*' || operator === '/') displayLarge.textContent = 0;
+
+            dotKey = [];
+        }
+
+
+    })
+})
+
+
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', function () {
+        displayBtn = btn.getAttribute('display-key');
+
+        //DATAKEYS
+        const displayKeys = document.querySelector(`button[display-key = "${displayBtn}"]`);
+        if (!displayKeys) return;
+
+        if (displayKeys.textContent === "Clear") {
+            displayLarge.textContent = '';
+            displayMini.textContent = '';
+            operatorArr = [];
+            operator = '';
+            result = [];
+            firstValue = 0;
+            secondValue = 0;
+            dotKey = [];
+        } else if (displayKeys.textContent === "<<") {
+            displayLarge.textContent = (displayLarge.textContent).slice(0, -1);
+        }
+    })
+
+})
+
+
+
+
+const mettalic = document.getElementById('dark');
+const clouds = document.getElementById('light');
+const sky = document.getElementById('blue');
+const leaves = document.getElementById('green');
+
+mettalic.addEventListener('click', function () {
+    document.querySelector('body').style.backgroundColor = 'slateGrey';
+    document.getElementById('buttons').style.backgroundColor = 'black';
+})
+
+clouds.addEventListener('click', function () {
+    document.querySelector('body').style.backgroundColor = 'whiteSmoke'
+    document.getElementById('buttons').style.backgroundColor = 'gainsboro'
+})
+
+sky.addEventListener('click', function () {
+    document.querySelector('body').style.backgroundColor = '#01b0d342'
+    document.getElementById('buttons').style.backgroundColor = '#01b0d3c0'
+})
+
+leaves.addEventListener('click', function () {
+    document.querySelector('body').style.backgroundColor = 'lightGreen'
+    document.getElementById('buttons').style.backgroundColor = 'forestGreen'
+})
